@@ -10,8 +10,7 @@
 const int digit[8] = {22, 23, 24, 25, 26, 27, 28, 29};
 const int rs = 3, en = 4, d4 = 10 , d5 = 11, d6 = 12, d7 = 13;
 const int contrastPin = 2; //adjusts the contrast of the Liquid Crystal Display w/o a potentiometer 
-unsigned int problemIndex = 0;
-unsigned int cursorPos = 0;
+unsigned int exprIndex = 0;
 char problem[50];
 
 char keys[4][4] = {
@@ -55,12 +54,11 @@ void loop() {
   for(int i = 0; i <= 9; i++){
     
     if(getKey == ('0' + i)){
-      lcd.setCursor(cursorPos, 0);
+      lcd.setCursor(exprIndex, 0);
       lcd.print(i);
-      problem[problemIndex] = ('0' + i);
+      problem[exprIndex] = ('0' + i);
       delay(250);
-      cursorPos++;
-      problemIndex++;
+      exprIndex++;
     }
   }
 

@@ -2,11 +2,10 @@
 #include <operator.h>
 
 void insertOp(char x){
-  lcd.setCursor(cursorPos, 0);
+  lcd.setCursor(exprIndex, 0);
   lcd.print(x);
-  problem[problemIndex] = x;
-  cursorPos++;
-  problemIndex++;
+  problem[exprIndex] = x;
+  exprIndex++;
 }
 
 void printProblem(){ //debugger
@@ -24,18 +23,17 @@ void resetProblemArray(){
     }
     Serial.println("\nProblem has been resetted");
     printProblem();
-    problemIndex = 0, cursorPos = 0;
+    exprIndex = 0;
     lcd.clear();
 }
 
 void removeChar(){
-    if(cursorPos == 0){return;} //preventing it from going beyond board limit.
+    if(exprIndex == 0){return;} //preventing it from going beyond board limit.
 
-    cursorPos--;
-    problemIndex--; 
-    lcd.setCursor(cursorPos, 0);
+    exprIndex--; 
+    lcd.setCursor(exprIndex, 0);
     lcd.print(' ');
-    problem[problemIndex] = '\0';
+    problem[exprIndex] = '\0';
 }
 
 void displaySolution(Keypad& key){

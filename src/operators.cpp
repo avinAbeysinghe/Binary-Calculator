@@ -8,7 +8,7 @@ int numset[2];
 //int number[7];
 
 int number = 0;
-int exprIndex = 0;
+//int exprIndex = 0;
 int numsetIndex = 0; 
 char operatorVal;
 

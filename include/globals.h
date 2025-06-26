@@ -7,8 +7,7 @@
 
 extern const int rs, en, d4, d5, d6, d7;
 extern const int contrastPin;  
-extern unsigned int cursorPos;
-extern unsigned int problemIndex;
+extern unsigned int exprIndex;
 
 extern char keys[4][4];
 extern char problem[50];
